@@ -6,16 +6,30 @@ import os
 
 # Definir los porcentajes para cada tipo de vehículo
 percentages = {
-    "auto_1": 0.20,
-    "auto_2": 0.05,
-    "auto_3": 0.05,
-    "auto_4": 0.15,
-    "auto_5": 0.07,
-    "auto_6": 0.08,
-    "auto_7": 0.20,
-    "auto_8": 0.02,
-    "auto_9": 0.08,
-    "auto_10": 0.10
+    "chevrolet_aveo": 0.08,
+    "chevrolet_spark": 0.06,
+    "chevrolet_vitara": 0.06,
+    "chevrolet_sail": 0.05,
+    "chevrolet_dmax": 0.05,
+    "toyota_yaris": 0.05,
+    "toyota_corolla": 0.07,
+    "toyota_fortuner": 0.03,
+    "mitsubishi_asx": 0.04,
+    "mitsubishi_lancer": 0.03,
+    "mitsubishi_l200": 0.03,
+    "mitsubishi_montero": 0.03,
+    "kia_rio": 0.04,
+    "kia_sportage": 0.02,
+    "kia_picanto": 0.04,
+    "hyundai_tucson": 0.06,
+    "hyundai_creta": 0.03,
+    "hyundai_grand_i10": 0.03,
+    "hyundai_hilux": 0.03,
+    "nissan_sentra": 0.02,
+    "mazda_3": 0.03,
+    "mazda_bt50": 0.03,
+    "volkswagen_gol": 0.05,
+    "suzuki_grand_vitara": 0.04
 }
 
 
@@ -44,6 +58,8 @@ def modify_vehicle_types(input_xml, output_xml):
       vehicles = root.findall('flow')
       print("Ingreso a al funcion",nombre)
       	
+#    print("El valor de vehiculo es",vehicles)	
+#    vehicles = root.findall('vehicle')
     total_vehicles = len(vehicles)
     print(f'Total vehicles found: {total_vehicles}')
 
@@ -55,7 +71,7 @@ def modify_vehicle_types(input_xml, output_xml):
 
     # Asegurarnos de que la lista de tipos tenga la longitud correcta
     while len(vehicle_types) < total_vehicles:
-        vehicle_types.append("auto_1")  # Por si acaso hay algún remanente
+        vehicle_types.append("chevrolet_aveo")  # Por si acaso hay algún remanente
 
     # Asignar aleatoriamente los tipos de vehículo a cada <vehicle>
     random.shuffle(vehicle_types)
@@ -93,6 +109,9 @@ if __name__ == '__main__':
     plt.figure(figsize=(10, 6))
     bars = plt.bar(types, values, color='skyblue')
     
+    
+
+
     # Añadir leyendas con los valores numéricos a cada barra
     for bar, value in zip(bars, values):
         plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), value,
@@ -100,6 +119,7 @@ if __name__ == '__main__':
 
     plt.xlabel('Tipo de Vehículo')
     plt.ylabel('Cantidad Asignada')
+    plt.xticks(rotation=90)
     plt.title(f'Distribución de Tipos de Vehículos Asignados {total_vehicles}')
     plt.grid(True)
     plt.tight_layout()
