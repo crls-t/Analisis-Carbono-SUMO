@@ -19,7 +19,7 @@ Este script bash permite ejecutar una serie de instrucciones para procesar archi
 Su ejecución viene dada del siguiente modo:
 ```bash
 ./datos.sh <día> <factor>
-
+```
 ## Archivos Python
 
 ### matriz.py
@@ -34,7 +34,7 @@ Este script toma los datos de un archivo Excel en el cual la primera columna y f
 Su ejecución viene dada del siguiente modo:
 ```bash
 python3 matriz.py <archivo_excel.xlxs> <archivo_salida.od> <tiempo_inicio_simulacion> <tiempo_final_simulacion> <factor>
-
+```
 
 ### modificar_vtype.py
 
@@ -46,6 +46,7 @@ Este script modifica el archivo de rutas generado para incluir diferentes tipos 
 Su ejecución viene dada del siguiente modo:
 ```bash
 python3 modificar_vtype.py <archivo_marouter_original.rou.xml> <archivo_salida_marouter_modificado.rou.xml> <carpeta_salida_figuras_resultados_cambios>
+```
 
 ### generate_sumocfg.py
 
@@ -59,6 +60,7 @@ Este script genera archivos de configuración para SUMO, utilizando varios archi
 Su ejecución viene dada del siguiente modo:
 ```bash
 python3 generate_sumocfg.py <archivo_marouter.rou.xml> <archivos_adicionales> <archivo_sumocfg> <archivo_entrada_edgeData.xml> <archivo_salida_edgeData.xml> <tiempo_inicio_simulacion> <tiempo_final_simulacion>
+```
 
 ### edges.py
 
@@ -69,6 +71,7 @@ Este script genera gráficos basados en los datos obtenidos de la simulación. A
 Su ejecución viene dada del siguiente modo:
 ```bash
 python3 edges.py <archivo_vehroute.xml> <archivo_matriz.od> <archivo_summary.xml> <carpeta_salida_de_resutados_graficos>
+```
 
 ### plot_net_dump.py
 
